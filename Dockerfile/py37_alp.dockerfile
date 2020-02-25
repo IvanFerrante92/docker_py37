@@ -1,16 +1,15 @@
-FROM python:3.7-alpine
+FROM ubuntu
 
-RUN apk add --no-cache bash \ 
-   && apk add --update coreutils && rm -rf /var/cache/apk/* \
-   && apk add --update python \
-   python-dev \
-   py-pip \
-   build-base \
-   && pip install virtualenv \
-   && pip install prometheus_client \
-   && rm -rf /var/cache/apk/*
-RUN mkdir /trash
-VOLUME /trash
+RUN apt-get update && apt-get install -y \
+    git \
+    python3.7 \
+    python-pip \
+
+RUN pip install --upgrade pip
+RUN pip install virtualenv  
+RUN rm -f /usr/bin/python
+RUN cp /usr/bin/python3.7 /usr/bin/python
+
 
 CMD [ "/bin/bash"]
 
