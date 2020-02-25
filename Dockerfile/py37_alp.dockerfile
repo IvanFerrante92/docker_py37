@@ -11,10 +11,6 @@ RUN apk add --no-cache bash \
    && rm -rf /var/cache/apk/*
 RUN mkdir /trash
 VOLUME /trash
-WORKDIR /
-COPY entrypoint.sh entrypoint.sh
-COPY export_metrics.py export_metrics.py
-RUN chmod 755 entrypoint.sh
-RUN chmod 755 export_metrics.py
-CMD [ "/bin/bash", "entrypoint.sh" ]
+
+CMD [ "/bin/bash"]
 
