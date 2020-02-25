@@ -1,5 +1,6 @@
 FROM python:3.7-alpine
 
+
 RUN apk add --no-cache bash \ 
    && apk add --update coreutils && rm -rf /var/cache/apk/* \
    && apk add --update python \
