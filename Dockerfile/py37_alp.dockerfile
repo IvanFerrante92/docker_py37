@@ -11,4 +11,4 @@ RUN rm -f /usr/bin/python
 RUN cp /usr/bin/python3.7 /usr/bin/python
 
 
-CMD [ "/bin/bash"]
+CMD tail -f /dev/null
